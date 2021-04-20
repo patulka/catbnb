@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Add a cat 🐱</h1>
+  <%= simple_form_for @cat do |f| %>
+    <%= f.input :name, placeholder: "Kitty" %>
+    <%= f.input :breed, placeholder: "Persian" %>
+    <%= f.input :color, placeholder: "Silver" %>
+    <%= f.input :description, placeholder: "What is the cat's favourite food? What does it like to do? Does it like kids?" %>
+    <%= f.submit class: 'btn btn-warning' %>
+  <% end %>
+</div>
