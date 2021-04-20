@@ -1,0 +1,19 @@
+<h1>See below all our cats:</h1>
+
+  <div class="cards">
+
+    <% @cats.each do |cat| %>
+      <div class="card" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg)">
+        <!-- path for link to be corrected after show works -->
+        <p><%= link_to cat.name, cat_path(cat) %></p>
+        <div class="cat-info-box">
+              <div class="cat-basic-description"></div>
+              <p>breed: <%= cat.breed %> </p>
+              <p>color: <%= cat.color %></p>
+
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
