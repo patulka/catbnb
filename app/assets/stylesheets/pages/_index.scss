@@ -7,22 +7,14 @@
   padding: 8px;
 }
 
-.card {
-  background-size: cover;
-  background-position: center;
-  align-items: center;
-  // height: 200px;
-  // width:300px;
-}
-
-.cat-basic-description {
-}
-
 .cat-info-box {
   background-color: white;
   margin: 8px;
 }
 
+p button {
+  color: white;
+}
 
 /*landscape phones and smaller*/
 @media (max-width: 575px) {
