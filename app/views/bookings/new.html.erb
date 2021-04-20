@@ -1,5 +1,13 @@
-  <%= simple_form_for [@cat, @booking] do |f| %>
-    <%= f.input :date_from %>
-    <%= f.input :date_to %>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+<div class="container">
+  <div class="booking-form">
+    <h1>Take your kitty home</h1>
+    <%= simple_form_for [@cat, @booking] do |f| %>
+      <%= f.input :date_from %>
+      <%= f.input :date_to %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="links-to-go-back">
+    <%= link_to 'Back to cats', root_path  %>
+  </div>
+</div>
