@@ -1,0 +1,14 @@
+  <div class="cat-title">
+
+    <%= link_to 'Bookings', new_cat_booking_path(@cat) %>
+
+    <p><%= @cat.name %></p>
+    <p><%= @cat.breed %></p>
+    <p><%= @cat.color %></p>
+    <p><%= @cat.description %></p>
+  <div class="details">
+    <h2>A bit more about this cat</h2>
+    <p><%= @cat.description %></p>
+  </div>
+</div>
+

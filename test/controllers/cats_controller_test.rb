@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class CatsControllerTest < ActionDispatch::IntegrationTest
+ cat-show
+  # test "the truth" do
+  #   assert true
+  # end
+
   test "should get new" do
     get cats_new_url
     assert_response :success
@@ -10,5 +15,4 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
     get cats_create_url
     assert_response :success
   end
-
 end
