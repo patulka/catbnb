@@ -1,13 +1,13 @@
-<div class="card-category">  </div>
+<div class="container">
  <div><%= image_tag(@cat.picture_url) %></div>
-  <div class="cat-title"></div>
-    <p><%= @cat.name %></p>
-    <p><%= @cat.breed %></p>
-    <p><%= @cat.color %></p>
+  <p><%= @cat.name %></p>
+  <p><%= @cat.breed %></p>
+  <p><%= @cat.color %></p>
   <div class="details">
     <h2>A bit more about this cat</h2>
     <p><%= @cat.description %></p>
   </div>
+  <%= link_to 'Bookings', new_cat_booking_path(@cat) %>
+</div>
 
-<%= link_to 'Bookings', new_cat_booking_path(@cat) %>
 
