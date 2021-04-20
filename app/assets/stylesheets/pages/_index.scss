@@ -1,2 +1,47 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.cards {
+  display: grid;
+  grid-gap: 16px;
+  padding: 8px;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  // height: 200px;
+  // width:300px;
+}
+
+.cat-basic-description {
+}
+
+.cat-info-box {
+  background-color: white;
+  margin: 8px;
+}
+
+
+/*landscape phones and smaller*/
+@media (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+  }
+}
+
+/*tablets and bigger*/
+@media(min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*desktops and bigger*/
+@media(min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
