@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'cats/new'
-  get 'cats/create'
+  
   devise_for :users
   root to: 'pages#home'
-  resources :cats, only: [:new, :create]
+
+  resources :cats, only: [:new, :create, :show] do
+    resources :bookings, only: [:new, :create]
+  end
 end
