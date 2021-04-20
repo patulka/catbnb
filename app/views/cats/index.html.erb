@@ -1,15 +1,14 @@
-<h1>See below all our cats:</h1>
+<h1>Cats, cats, cats...</h1>
 
   <div class="cards">
 
     <% @cats.each do |cat| %>
       <div class="card">
         <%= image_tag("#{cat.picture_url}") %>
-        <p><%= link_to cat.name, cat_path(cat) %></p>
         <div class="cat-info-box">
-              <div class="cat-basic-description"></div>
-              <p>breed: <%= cat.breed %> </p>
-              <p>color: <%= cat.color %></p>
+          <p><%= link_to cat.name, cat_path(cat) %></p>
+          <p><%= cat.breed %> (<%= cat.color %> color)</p>
+          <p class="btn btn-primary"><%= link_to "Rent me!", cat_path(cat) %></p>
         </div>
       </div>
     <% end %>
