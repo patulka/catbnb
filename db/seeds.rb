@@ -26,14 +26,15 @@ puts "Users created."
 puts "Seeding cats..."
 
 30.times do
-  cat = Cat.create!(
+  cat = Cat.new(
     name: Faker::Name.first_name,
     breed: Faker::Creature::Cat.breed,
     color: Faker::Color.color_name,
     # may be shortened later
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
-    user_id: User.all.sample.id
     )
+    cat.user = User.all.sample
+    cat.save!
 end
 
 puts "Cats created."
@@ -42,15 +43,15 @@ puts "Seeding bookings..."
 
 10.times do
   date = Faker::Date.in_date_period
-  cat = Cat.all.sample
 
-  booking = Booking.create!(
-    cat_id: cat.id,
-    user_id: (User.all.select{|user| user.id != cat.user.id }).sample.id,
+  booking = Booking.new(
     # Random date in current year
     date_from: date,
     date_to: date + 7
     )
+    booking.cat = Cat.all.sample
+    booking.user = User.all.select{|user| user != booking.cat.user }.sample
+    booking.save!
 end
 
 puts "Bookings created."
