@@ -30,11 +30,13 @@ puts "Seeding cats..."
     name: Faker::Name.first_name,
     breed: Faker::Creature::Cat.breed,
     color: Faker::Color.color_name,
+    age: rand(0..30),
     # may be shortened later
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
     )
-    cat.user = User.all.sample
-    cat.save!
+  cat.user = User.all.sample
+  cat.picture_url = "https://loremflickr.com/200/200/cat#{cat.color}"
+  cat.save!
 end
 
 puts "Cats created."
