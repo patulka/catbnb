@@ -12,7 +12,9 @@
     </div>
 
     <div class="links-to-go-back">
-      <%= link_to 'Choose Me !', new_cat_booking_path(@cat) %>
+      <%= link_to 'Choose me', new_cat_booking_path(@cat) %> |
+      <%= link_to 'Back to all cats', cats_path %> |
+      <%= link_to 'Add a new cat', new_cat_path %>
     </div>
   </div>
 </div>
