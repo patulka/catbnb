@@ -5,17 +5,7 @@
 @import "forms";
 @import "footer";
 @import "banner";
-
-.links-to-go-back {
-  width: 150px;
-  border-radius: 4px;
-  margin: 50px 0px;
-  text-align: center;
-  background-color: blue;
-   a {
-     color: white;
-   }
-}
-
-
-
+@import "map";
+@import "buttons";
+@import "card";
+@import "logo";

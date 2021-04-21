@@ -1,17 +1,23 @@
 <div class="container">
- <div><%= image_tag(@cat.picture_url) %></div>
- <div class="cat-title"><p><%= @cat.name %></p></div>
- <p><%= @cat.breed %></p>
- <p><%= @cat.color %></p>
- <p><%= @cat.age %></p>
+  <div class="main-container">
+    <div><%= image_tag(@cat.picture_url) %></div>
+    <div class="cat-title"><p><b>Name:</b> <%= @cat.name %></p></div>
+    <p><b>Breed:</b> <%= @cat.breed %></p>
+    <p><b>Color:</b> <%= @cat.color %></p>
+    <p><b>Age:</b> <%= @cat.age %></p>
 
- <div class="details">
-   <h2>A bit more about this cat</h2>
-   <p><%= @cat.description %></p>
- </div>
- <%= link_to 'Rent this cat!', new_cat_booking_path(@cat) %> |
- <%= link_to 'Back to all cats', cats_path %> |
- <%= link_to 'Add a new cat', new_cat_path %>
+    <div class="details">
+      <h2><b>About <%= @cat.name %></b></h2>
+      <p><%= @cat.description %></p>
+    </div>
+
+    <div class="links-to-go-back">
+      <%= link_to 'Choose me', new_cat_booking_path(@cat) %> |
+      <%= link_to 'Back to all cats', cats_path %> |
+      <%= link_to 'Add a new cat', new_cat_path %>
+    </div>
+  </div>
 </div>
+
 
 
