@@ -36,7 +36,7 @@ cities = ["Zurich", "Geneva", "Lucerne", "Winterthur", "Basel", "La Chaux-de-Fon
     city: cities.sample,
     description: "My favourite food is #{Faker::Food.dish}. I like to sleep on #{Faker::House.furniture} and play #{Faker::Team.sport} outside. I live by this motto: #{Faker::TvShows::Simpsons.quote}"
     )
-  cat.picture_url = Faker::LoremFlickr.image(size: "200x200", search_terms: ['cat', cat.breed])
+  cat.picture_url = Faker::LoremFlickr.image(size: "640x480", search_terms: ['cat', cat.breed])
   cat.user = User.all.sample
   cat.save!
 end
