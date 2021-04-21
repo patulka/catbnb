@@ -9,7 +9,8 @@
    <h2>A bit more about this cat</h2>
    <p><%= @cat.description %></p>
  </div>
- <%= link_to 'Bookings', new_cat_booking_path(@cat) %>
+ <%= link_to 'Rent this cat!', new_cat_booking_path(@cat) %> |
+ <%= link_to 'Back to all cats', cats_path %>
 </div>
 
 

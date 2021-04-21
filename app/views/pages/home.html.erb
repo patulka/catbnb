@@ -1,7 +1,12 @@
 <div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?cats);">
   <div class="cat-container">
     <h1><strong>Cats for the best people</strong></h1>
-    <%= link_to "Add a cat", new_user_session_path, class: "btn btn-info" %>
-    <%= link_to "Rent a cat", cats_path, class: "btn btn-info" %>
+    <% if user_signed_in? %>
+      <%= link_to "View all cats", cats_path, class: "btn btn-info" %>
+      <%= link_to "Add a new cat", new_cat_path, class: "btn btn-info" %>
+    <% else %>
+      <%= link_to "View all cats", cats_path, class: "btn btn-info" %>
+      <%= link_to "Add a new cat", new_user_session_path, class: "btn btn-info" %>
+    <% end %>
   </div>
 </div>
