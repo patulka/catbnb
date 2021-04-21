@@ -25,17 +25,19 @@ end
 puts "Users created."
 puts "Seeding cats..."
 
+cities = ["Zurich", "Geneva", "Lucerne", "Winterthur", "Basel", "La Chaux-de-Fonds", "Bern", "Chur"]
+
 30.times do
   cat = Cat.new(
     name: Faker::Name.first_name,
     breed: Faker::Creature::Cat.breed,
     color: Faker::Color.color_name,
     age: rand(0..30),
-    # may be shortened later
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+    city: cities.sample,
+    description: "My favourite food is #{Faker::Food.dish}. I like to sleep on #{Faker::House.furniture} and play #{Faker::Team.sport} outside. I live by this motto: #{Faker::TvShows::Simpsons.quote}"
     )
+  cat.picture_url = Faker::LoremFlickr.image(size: "200x200", search_terms: ['cat', cat.breed])
   cat.user = User.all.sample
-  cat.picture_url = "https://loremflickr.com/200/200/cat#{cat.color}"
   cat.save!
 end
 
