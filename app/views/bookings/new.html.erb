@@ -4,10 +4,10 @@
     <%= simple_form_for [@cat, @booking] do |f| %>
       <%= f.input :date_from %>
       <%= f.input :date_to %>
-      <%= f.submit class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn yellow-button' %>
     <% end %>
   </div>
-  <div class="links-to-go-back">
-    <%= link_to 'Back to all cats', cats_path %>
+  <div class="links-to-pages">
+    <%= link_to 'Back to all cats', cats_path, class: "btn btn-light" %>
   </div>
 </div>
