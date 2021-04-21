@@ -1,23 +1,24 @@
 <div class="container">
   <div class="main-container">
-    <div><%= image_tag(@cat.picture_url) %></div>
-    <div class="cat-title"><p><b>Name:</b> <%= @cat.name %></p></div>
-    <p><b>Breed:</b> <%= @cat.breed %></p>
-    <p><b>Color:</b> <%= @cat.color %></p>
-    <p><b>Age:</b> <%= @cat.age %></p>
+    <div class="new-card-for-cat">
+      <div class="cat-img-big"><%= image_tag(@cat.picture_url) %></div>
 
-    <div class="details">
-      <h2><b>About <%= @cat.name %></b></h2>
-      <p><%= @cat.description %></p>
-    </div>
+      <div class="new-card-cat-body">
+        <h2><b>About <%= @cat.name %></b></h2>
+        <p><b>Breed:</b> <%= @cat.breed %></p>
+        <p><b>Color:</b> <%= @cat.color %></p>
+        <p><b>Age:</b> <%= @cat.age %></p>
+        <p><%= @cat.description %></p>
+      </div>
 
-    <div class="links-to-go-back">
-      <%= link_to 'Choose me', new_cat_booking_path(@cat) %> |
-      <%= link_to 'Back to all cats', cats_path %> |
-      <%= link_to 'Add a new cat', new_cat_path %>
+      <div class="button-cat-big">
+        <%= link_to 'Choose me', new_cat_booking_path(@cat), class: "btn btn-info"  %>
+       </div>
+     </div>
+
+    <div class="links-to-pages">
+      <%= link_to 'Back to all cats', cats_path, class: "btn btn-light" %>
+      <%= link_to 'Add a new cat', new_cat_path, class: "btn btn-light" %>
     </div>
-  </div>
+   </div>
 </div>
-
-
-
