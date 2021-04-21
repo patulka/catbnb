@@ -7,9 +7,9 @@ class BookingsController < ApplicationController
   def create
     @cat = Cat.find(params[:cat_id])
     @user = current_user
-    puts @user
     @booking = Booking.new(booking_params)
     @booking.cat = @cat
+    @booking.user = @user
     if @booking.save!
       redirect_to cat_path(@cat)
     else
