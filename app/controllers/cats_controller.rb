@@ -2,6 +2,13 @@ class CatsController < ApplicationController
 
   def index
     @cats = Cat.all
+    @markers = @cats.geocoded.map do |cat|
+      {
+        lat: cat.latitude,
+        lng: cat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { cat: cat })
+      }
+    end
   end
 
   def show
@@ -26,6 +33,6 @@ class CatsController < ApplicationController
   private
 
   def cat_params
-    params.require(:cat).permit(:name, :breed, :color, :description, :age, :picture_url)
+    params.require(:cat).permit(:name, :breed, :color, :description, :age, :picture_url, :city)
   end
 end
