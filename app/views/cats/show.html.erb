@@ -1,13 +1,15 @@
 <div class="container">
  <div><%= image_tag(@cat.picture_url) %></div>
-  <p><%= @cat.name %></p>
-  <p><%= @cat.breed %></p>
-  <p><%= @cat.color %></p>
-  <div class="details">
-    <h2>A bit more about this cat</h2>
-    <p><%= @cat.description %></p>
-  </div>
-  <%= link_to 'Bookings', new_cat_booking_path(@cat) %>
+ <div class="cat-title"><p><%= @cat.name %></p></div>
+ <p><%= @cat.breed %></p>
+ <p><%= @cat.color %></p>
+ <p><%= @cat.age %></p>
+
+ <div class="details">
+   <h2>A bit more about this cat</h2>
+   <p><%= @cat.description %></p>
+ </div>
+ <%= link_to 'Bookings', new_cat_booking_path(@cat) %>
 </div>
 
 
