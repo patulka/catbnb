@@ -2,8 +2,8 @@
   <div class="booking-form">
     <h1>Take your kitty home</h1>
     <%= simple_form_for [@cat, @booking] do |f| %>
-      <%= f.input :date_from %>
-      <%= f.input :date_to %>
+      <%= f.input :date_from, :as => :date, html5: true, placeholder: "22/04/2021" %>
+      <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
