@@ -1,5 +1,5 @@
 .cat-card {
-  width: 350px;
+  width: 300px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
@@ -16,21 +16,7 @@
   background-repeat: no-repeat;
 }
 
-
-.cat-card-big {
-  margin: 0px auto;
-  width: 700px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-}
-
-.cat-card-body-big {
-  margin: 20px 25px;
-    p {
-      line-height: 23px;
-    }
-}
+/* show page */
 
 .cat-img-big {
   text-align: center;
@@ -41,14 +27,35 @@
   background: white;
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  width: 60%;
 
 }
 
 .new-card-cat-body {
-  margin: 25px 20px;
+  margin: 20px 60px;
 }
 
 .button-cat-big {
   text-align: center;
   padding: 40px;
+}
+
+.appl-form {
+  height: 30%;
+  width: 29vw;
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.details {
+  display: flex;
+  margin: 20px 0px;
+  background-color: lightgrey;
+  div {
+    padding: 15px 20px;
+    margin-right: 10%;
+  }
 }
