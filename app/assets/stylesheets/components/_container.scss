@@ -1,7 +1,15 @@
 .main-container {
-  margin-top: 50px;
+  margin: 50px 0px;
    h1{
     padding: 35px 0px;
   }
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 4rem;
+}
