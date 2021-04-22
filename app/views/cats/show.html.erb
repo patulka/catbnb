@@ -1,41 +1,42 @@
-  <div class="second-container">
-    <div class="new-card-for-cat">
-      <div class="cat-img-big">
-        <%= image_tag @cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;"  %>
-      </div>
-
-      <div class="new-card-cat-body">
-        <h2><b>About <%= @cat.name %></b></h2>
-        <div class="details">
-          <div>
-            <p><b>Breed:</b> <%= @cat.breed %></p>
-          </div>
-          <div>
-            <p><b>Color:</b> <%= @cat.color %></p>
-          </div>
-          <div>
-            <p><b>Age:</b> <%= @cat.age %></p>
-          </div>
-          <div>
-            <p><i class="fas fa-map-marker-alt"></i> <%= @cat.city %></p>
-          </div>
+  <div class="container">
+    <div class="flex-container">
+      <div class="new-card-for-cat">
+        <div class="cat-img-big">
+          <%= image_tag @cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;"  %>
         </div>
-        <p><%= @cat.description %></p>
+
+        <div class="new-card-cat-body">
+          <div class="detail">
+            <h2><b>About <%= @cat.name %></b></h2>
+            <p style="color:grey"><i class="fas fa-map-marker-alt"></i> <%= @cat.city %></p>
+          </div>
+          <div class="details">
+            <div>
+              <p><b>Breed:</b> <%= @cat.breed %></p>
+            </div>
+            <div>
+              <p><b>Color:</b> <%= @cat.color %></p>
+            </div>
+            <div>
+              <p><b>Age:</b> <%= @cat.age %></p>
+            </div>
+          </div>
+          <p><%= @cat.description %></p>
+        </div>
       </div>
-    </div>
 
     <div class="appl-form">
       <h1>Take me home</h1>
       <%= simple_form_for [@cat, @booking] do |f| %>
         <%= f.input :date_from, :as => :date, html5: true, placeholder: "22/04/2021" %>
         <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
-        <%= f.submit class: 'btn yellow-button' %>
+        <%= f.submit class: 'btn btn-info btn-md p-2' %>
       <% end %>
       <p>or</p>
       <%= link_to 'Back to all cats', booking_path, class: "btn btn-outline-secondary" %>
     </div>
 
   </div>
-
+</div>
 
 
