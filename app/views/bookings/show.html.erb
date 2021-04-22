@@ -1,11 +1,31 @@
-<div class="container">
-  <div class="cat-img-big"><%= image_tag(@booking.cat.picture_url) %></div>
-  <p><b>Name: </b><%= @booking.cat.name %></p>
-  <p><b>Location: </b><%= @booking.cat.city%></p>
-  <p><b>Start date:</b>
-  <%= @booking.date_from.strftime('%d/%m/%Y')  %></p>
-  <p><b>End date:</b>
-  <%= @booking.date_to.strftime('%d/%m/%Y') %> </p>
-</div>
+<div class="second-container">
+    <div class="new-card-for-cat">
+      <div class="cat-img-big">
+        <%= image_tag @booking.cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;"  %>
+      </div>
 
+      <div class="new-card-cat-body">
+        <h2><b>Name : <%= @booking.cat.name %></b></h2>
+        <div class="details">
+          <div>
+          <p><b>Location:</b> <%= @booking.cat.city %></p>
+          </div>
+          <div>
+            <p><b>Start date:</b> <%= @booking.date_from.strftime('%d/%m/%Y') %></p>
+          </div>
+          <div>
+            <p><b>End date:</b> <%= @booking.date_to.strftime('%d/%m/%Y') %></p>
+          </div>
 
+        </div>
+
+      </div>
+    </div>
+
+    <div class="appl-form">
+      <h1>Thank you</h1>
+
+      <%= link_to 'Back to all cats', booking_path, class: "btn btn-outline-secondary" %>
+    </div>
+
+  </div>
