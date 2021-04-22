@@ -8,7 +8,11 @@
 
       <% @cats.each do |cat| %>
         <div class="cat-card">
-          <div class="card-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cat.picture_url %>)">
+          <div class="card-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if cat.picture_url != "" %>
+              <%= cat.picture_url %>
+            <% else %>
+              <%= cl_image_path cat.photo.key %>
+            <% end %>)">
           </div>
           <div class="cat-card-body">
             <h2 class="card-title"><%= link_to cat.name, cat_path(cat) %></h2>
