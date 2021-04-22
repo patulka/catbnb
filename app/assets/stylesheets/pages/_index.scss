@@ -1,10 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.grid-container {
+  display: flex;
+  padding-bottom: 30px;
+  padding-left: 15px;
+}
+
 .cards {
   display: grid;
   grid-gap: 16px;
   padding: 8px;
+  flex-grow: 0;
 }
 
 .cat-info-box {
