@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.cat = @cat
     @booking.user = @user
     if @booking.save!
-      redirect_to cat_path(@cat)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
