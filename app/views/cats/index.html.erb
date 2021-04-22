@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="main-container text-center">
     <h1>Choose one of our lovely cats</h1>
@@ -20,6 +21,7 @@
         </div>
       <% end %>
     </div>
+    
     <div id="map"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
