@@ -17,6 +17,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def my_bookings
+    # @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
+    # @cat =
+  end
+
   private
 
   def booking_params
