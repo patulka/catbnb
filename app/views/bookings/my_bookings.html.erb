@@ -1,0 +1,11 @@
+<h1>List of my bookings:</h1>
+
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li>
+     <%= booking.cat.id %> | <b> <%= booking.cat.name %></b> | <%= booking.cat.city %> | <%= booking.date_from %> | <%= booking.date_to %> | <%= link_to "Details about ", cats_path %>
+  </li>
+  <% end %>
+</ul>
+
