@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  resources :bookings, only: [:show]
   get "my_bookings", to: "bookings#my_bookings"
 end
