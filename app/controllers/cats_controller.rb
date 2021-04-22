@@ -6,7 +6,8 @@ class CatsController < ApplicationController
       {
         lat: cat.latitude,
         lng: cat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { cat: cat })
+        infoWindow: render_to_string(partial: "info_window", locals: { cat: cat }),
+        image_url: helpers.asset_url('paws.png')
       }
     end
   end
