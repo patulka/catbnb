@@ -1,22 +1,19 @@
 <div class="container">
   <div class="main-container">
-      <h1>List of my cats:</h1>
+    <h1>My cats</h1>
 
-      <p>
-        <% @cats.each do |cat| %>
-        <p>
-           <b> <%= cat.name %></b>:
-           <%= cat.breed %> breed,
-           <%= cat.color %> color,
-           <%= cat.age %> years,
-           <%= cat.city %> |
-           <%= link_to "Description of #{cat.name} ", cat_path(cat) %>
-        </p>
-        <% end %>
-        <br>
-        <p>
-          <%= link_to "Add a new cat", new_cat_path, class: "btn btn-info"  %>
-        </p>
-      </p>
+    <% @cats.each do |cat| %>
+      <div class="card-landscape">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-landscape-infos">
+          <h2> <%= link_to "#{cat.name}", cat_path(cat) %> </h2>
+          <p>
+            <%= cat.breed %> (<%= cat.color %>)
+          </p>
+        </div>
+      </div>
+    <% end %>
+
   </div>
+    <%= link_to "View all cats", cats_path, class: "btn btn-info" %>
 </div>
