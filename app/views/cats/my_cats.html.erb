@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="main-container">
+      <h1>List of my cats:</h1>
+
+      <p>
+        <% @cats.each do |cat| %>
+        <p>
+           <b> <%= cat.name %></b>:
+           <%= cat.breed %> breed,
+           <%= cat.color %> color,
+           <%= cat.age %> years,
+           <%= cat.city %> |
+           <%= link_to "Description of #{cat.name} ", cat_path(cat) %>
+        </p>
+        <% end %>
+        <br>
+        <p>
+          <%= link_to "Add a new cat", new_cat_path, class: "btn btn-info"  %>
+        </p>
+      </p>
+  </div>
+</div>

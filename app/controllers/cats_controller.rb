@@ -31,6 +31,10 @@ class CatsController < ApplicationController
     end
   end
 
+  def my_cats
+    @cats = Cat.where(user_id: current_user.id)
+  end
+
   private
 
   def cat_params
