@@ -19,6 +19,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "#{Faker::Avatar.image(slug: "my-own-slug", size: "50x50")}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "My cats", my_cats_path, method: :get, class: "dropdown-item" %>
+              <%= link_to "My bookings", my_bookings_path, method: :get, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
