@@ -20,11 +20,11 @@
   padding-bottom: 4rem;
 }
 
-.second-container {
-  width: 80%;
+.flex-container {
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 }
 .flex-container {
   display: flex;

@@ -29,7 +29,6 @@
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   width: 60%;
-
 }
 
 .new-card-cat-body {
@@ -43,7 +42,7 @@
 
 .appl-form {
   height: 30%;
-  width: 29vw;
+  width: 35%;
   background-color: white;
   padding: 25px 20px;
   border-radius: 5px;
@@ -55,8 +54,15 @@
   display: flex;
   margin: 20px 0px;
   background-color: lightgrey;
+  justify-content: space-around;
+  border-radius: 5px;
   div {
-    padding: 15px 20px;
-    margin-right: 10%;
+    padding: 15px 0px;
   }
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  text-align: bottom;
 }

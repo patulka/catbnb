@@ -1,1 +1,16 @@
 
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .new-card-for-cat {
+    width: 98%;
+    margin-bottom: 10px;
+  }
+
+  .appl-form {
+    width: 98%;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+}

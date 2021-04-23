@@ -1,0 +1,31 @@
+.card-landscape {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 50%
+}
+
+.card-landscape img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-landscape h2 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-landscape p {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-landscape .card-landscape-infos {
+  padding: 16px;
+}
