@@ -5,8 +5,24 @@
   height: 4rem;
   background-color: #191919;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   p {
     color: white;
     margin-top: 15px;
   }
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.fab {
+  color: white;
 }
