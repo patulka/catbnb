@@ -1,5 +1,15 @@
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
+#already-booked {
+  background: lightgrey;
+  border-radius: 5px;
+  padding-bottom: 3px;
+}
+
+#not-booked {
+  background-color: white;
+}
+
 @media (max-width: 800px) {
   .new-card-for-cat {
     width: 98%;
