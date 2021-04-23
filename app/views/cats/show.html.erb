@@ -30,14 +30,38 @@
       </div>
 
     <div class="appl-form">
-      <h1>Take me home</h1>
-      <%= simple_form_for [@cat, @booking] do |f| %>
-        <%= f.input :date_from, :as => :date, html5: true, placeholder: "22/04/2021" %>
-        <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
-        <%= f.submit class: 'btn btn-info btn-md p-2' %>
+
+      <% if current_user == @cat.user %>
+        <!-- <p>I am your cat, you cannot book me.</p> -->
+        <h2>My other cats:</h2>
+
+        <% @all_my_cats.each do |cat| %>
+          <div class="card-landscape">
+            <div class="card-landscape-infos">
+              <h2> <%= link_to "#{cat.name}", cat_path(cat) %> </h2>
+              <p>
+                <%= cat.breed %> (<%= cat.color %>)
+              </p>
+            </div>
+          </div>
+        <% end %>
+
+
+      <% else %>
+        <!-- <p>I am not your cat, you can book me.</p> -->
+
+        <h1>Take me home</h1>
+        <%= simple_form_for [@cat, @booking] do |f| %>
+          <%= f.input :date_from, :as => :date, html5: true, placeholder: "22/04/2021" %>
+          <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
+          <%= f.submit class: 'btn btn-info btn-md p-2' %>
+        <% end %>
+        <p>or</p>
+        <%= link_to 'Back to all cats', booking_path, class: "btn btn-outline-secondary" %>
+
       <% end %>
-      <p>or</p>
-      <%= link_to 'Back to all cats', booking_path, class: "btn btn-outline-secondary" %>
+
+
     </div>
 
   </div>
