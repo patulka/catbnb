@@ -1,3 +1,5 @@
+<%= link_to 'Back to all cats', cats_path, class: "btn btn-outline-secondary back-button", id: "top-backlink"%>
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -15,8 +17,6 @@
         <%= @booking.date_from.strftime('%d/%m/%Y') %></p>
       <p><b>End date:</b>
         <%= @booking.date_to.strftime('%d/%m/%Y') %></p>
-
-      <%= link_to "Back to cats", cats_path, class: "btn btn-outline-secondary" %>
      </div>
    </div>
 </div>
