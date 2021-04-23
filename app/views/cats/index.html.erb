@@ -1,7 +1,17 @@
-
 <div class="container-fluid">
   <div class="main-container text-center">
     <h1>Choose one of our lovely cats</h1>
+      
+    <%= form_tag cats_path, method: :get do %>
+      <div class="d-flex search-form">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a cat"
+        %>
+        <%= submit_tag "Search", class: "btn btn-info" %>
+      </div>
+    <% end %>
   </div>
   <div class="flex-container">
     <div class="cards">

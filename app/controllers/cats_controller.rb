@@ -1,7 +1,11 @@
 class CatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @cats = Cat.all
+    if params[:query].present?
+      @cats = Cat.search_by_cat_info(params[:query])
+    else
+      @cats = Cat.all
+    end
     @markers = @cats.geocoded.map do |cat|
       {
         lat: cat.latitude,
