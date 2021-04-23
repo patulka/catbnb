@@ -11,4 +11,8 @@ class Cat < ApplicationRecord
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?  
 
+  include PgSearch::Model
+  pg_search_scope :search_by_cat_info,
+    against: [ :name, :breed, :color, :city, :description, :age ],
+    using: { tsearch: { prefix: true } }
 end
