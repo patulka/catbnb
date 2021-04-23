@@ -32,11 +32,42 @@
       </div>
 
     <div class="appl-form">
-      <h1>Take me home</h1>
-      <%= simple_form_for [@cat, @booking] do |f| %>
-        <%= f.input :date_from, :as => :date, html5: true, placeholder: "22/04/2021" %>
-        <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
-        <%= f.submit class: 'btn btn-info btn-md p-2' %>
+
+      <% if current_user == @cat.user %>
+        <!-- <p>I am your cat, you cannot book me. But see your other cats.</p> -->
+        <h2 class="mb-4">My other cats:</h2>
+              <% @all_my_cats.each do |cat| %>
+                <%if cat != @cat%>
+                      <p class="text-left"> <b><%= link_to "#{cat.name}", cat_path(cat) %></b>: <%= cat.breed %> (<%= cat.color %>)
+                      </p>
+                <% end %>
+              <% end %>
+
+      <!-- <p> I am not your cat, you can book me.</p> -->
+      <% else %>
+
+        <!-- You have me already booked, but you can book me again. -->
+        <% if !current_user.bookings.where(cat: @cat).empty? %>
+          <p class="text-left"> You have me already booked:</p>
+          <ul>
+              <% current_user.bookings.where(cat: @cat).each do |booking| %>
+             <li>
+                from: <%= booking.date_from %> to: <%= booking.date_to %>
+              <% end %>
+              </li>
+          </ul>
+          <h1>Take me home once again</h1>
+
+        <!-- You dont have me booked yet, book me. -->
+        <% else %>
+          <h1>Take me home</h1>
+        <%end %>
+
+        <%= simple_form_for [@cat, @booking] do |f| %>
+          <%= f.input :date_from, :as => :date, html5: true, placeholder: "22/04/2021" %>
+          <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
+          <%= f.submit class: 'btn btn-info btn-md p-2' %>
+        <% end %>
       <% end %>
     </div>
 

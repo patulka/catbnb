@@ -19,6 +19,8 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @booking = Booking.new
+    # needed for else-if on display of booking form
+    @all_my_cats = Cat.where(user_id: current_user.id)
   end
 
   def new
