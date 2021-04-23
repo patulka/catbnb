@@ -1,23 +1,25 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <% if @booking.cat.picture_url != '' %>
-        <%= image_tag @booking.cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
-      <% else %>
-        <%= cl_image_tag @booking.cat.photo.key, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
-      <% end %>
-    </div>
-    <div class="col-md-6 text-center">
-      <h1><b>Booking confirmed</b></h1>
-      <h2><b>Name:</b> <%= @booking.cat.name %></h2>
-      <p><b>Location:</b> <%= @booking.cat.city %></p>
-      <p><b>Start date:</b>
-        <%= @booking.date_from.strftime('%d/%m/%Y') %></p>
-      <p><b>End date:</b>
-        <%= @booking.date_to.strftime('%d/%m/%Y') %></p>
+  <div class="second_container">
+    <div class="row">
+      <div class="col-md-6">
+        <% if @booking.cat.picture_url != '' %>
+          <%= image_tag @booking.cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
+        <% else %>
+          <%= cl_image_tag @booking.cat.photo.key, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
+        <% end %>
+      </div>
+      <div class="col-md-6 card-cat-booking">
+        <h1><b>Booking confirmed</b></h1>
+        <p><b>Name:</b> <%= @booking.cat.name %></p>
+        <p><b>Location:</b> <%= @booking.cat.city %></p>
+        <p><b>Start date:</b>
+          <%= @booking.date_from.strftime('%d/%m/%Y') %></p>
+        <p><b>End date:</b>
+          <%= @booking.date_to.strftime('%d/%m/%Y') %>
+        </p>
 
-      <%= link_to "Back to cats", cats_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "Back to cats", cats_path, class: "btn btn-outline-secondary" %>
+       </div>
      </div>
-   </div>
+  </div>
 </div>
-
