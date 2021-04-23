@@ -18,6 +18,9 @@
           <%= @booking.date_from.strftime('%d/%m/%Y') %></p>
         <p><b>End date:</b>
           <%= @booking.date_to.strftime('%d/%m/%Y') %>
+         <div>
+          <%= link_to 'View my bookings', my_bookings_url, class: "btn btn-info btn-md p-2", id: "top-backlink"%>
+         </div>
         </p>
       </div>
     </div>
