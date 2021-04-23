@@ -13,7 +13,7 @@
       </div>
     <% end %>
   </div>
-  <div class="flex-container">
+  <div class="flex-container index-container">
     <div class="cards">
 
       <% @cats.each do |cat| %>
@@ -25,8 +25,11 @@
             <% end %>)">
           </div>
           <div class="cat-card-body">
-            <h2 class="card-title"><%= link_to cat.name, cat_path(cat) %></h2>
-            <p class="card-text"><%= cat.breed %></p>
+            <div>
+              <h2 class="card-title mb-0"><%= cat.name %></h2>
+              <p class="mt-1" style="color:grey; font-size: 17px;"><i class="fas fa-map-marker-alt"></i> <%= cat.city %></p>
+            </div>
+            <p class="card-text truncate"><strong>Breed:</strong> <%= cat.breed %></p>
           </div>
           <div class="yellow-button">
             <%= link_to "Rent me", cat_path(cat) %>
