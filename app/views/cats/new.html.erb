@@ -1,18 +1,35 @@
 <div class="container">
   <div class="main-container">
-    <h1>Add a cat 🐱</h1>
+    <h1 class="text-center">Add a cat 🐱</h1>
     <%= simple_form_for @cat do |f| %>
-      <%= f.input :name, placeholder: "Kitty" %>
-      <%= f.input :breed, placeholder: "Persian" %>
-      <%= f.input :color, placeholder: "Silver" %>
-      <%= f.input :age, input_html: {min: 0, max: 30, value: 0}%>
-      <%= f.input :city, placeholder: "Zurich" %>
-      <%= f.input :description, placeholder: "What is the cat's favourite food? What does it like to do? Does it like kids?" %>
-      <%= f.input :picture_url %>
-      <%= f.submit class: 'btn yellow-button' %>
+      <div class="flex-container new-cat-form">
+        <div class="form-half">
+          <%= f.input :name, placeholder: "Kitty" %>
+          <%= f.input :breed, placeholder: "Persian" %>
+          <%= f.input :color, placeholder: "Silver" %>
+          <%= f.input :age, input_html: {min: 0, max: 30, value: 0}%>
+          <%= f.input :city, placeholder: "Zurich" %>
+        </div>
+        <div class="form-half">
+          <div class="d-flex flex-column" style="height: 100%;">
+            <div style="flex: 1 1 auto">
+              <%= f.input :description, placeholder: "What is the cat's favourite food? What does it like to do? Does it like kids?" %>
+            </div>
+            <div style="flex: 0 1 auto">
+              <br>
+              <%= f.input :photo, as: :file %>
+              <p>or</p>
+              <%= f.input :picture_url %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <%= f.button :submit, class: 'btn yellow-button' %>
+        <div class="links-to-pages">
+          <%= link_to 'Back to all cats', cats_path, class: "btn btn-light" %>
+        </div>
+      </div>
     <% end %>
-    <div class="links-to-pages">
-      <%= link_to 'Back to all cats', cats_path, class: "btn btn-light" %>
-    </div>
   </div>
 </div>

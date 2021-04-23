@@ -5,3 +5,20 @@
   }
 }
 
+.form-half {
+  flex-grow: 0.4;
+}
+
+abbr {
+  text-decoration: none !important;
+}
+
+.cat_description {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+#cat_description {
+  height: 100%;
+}

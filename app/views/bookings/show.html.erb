@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <%= image_tag @booking.cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;"  %>
+      <% if @booking.cat.picture_url != '' %>
+        <%= image_tag @booking.cat.picture_url, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
+      <% else %>
+        <%= cl_image_tag @booking.cat.photo.key, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
+      <% end %>
     </div>
     <div class="col-md-6 text-center">
       <h1><b>Booking confirmed</b></h1>

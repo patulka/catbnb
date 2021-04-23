@@ -1,9 +1,12 @@
 class Cat < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
 
-  validates :name, :breed, :description, :color, :picture_url, :city, presence: true
+  validates :name, :breed, :description, :color, :city, presence: true
   validates :age, presence: true, inclusion: 0..30
+  validates :photo, presence: true, unless: ->(cat){cat.picture_url.present?}
+  validates :picture_url, presence: true, unless: ->(cat){cat.photo.present?}
 
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?  

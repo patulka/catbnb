@@ -2,12 +2,6 @@
 @import "home";
 @import "show";
 
-.grid-container {
-  display: flex;
-  padding-bottom: 30px;
-  padding-left: 15px;
-}
-
 .cards {
   display: grid;
   grid-gap: 16px;
