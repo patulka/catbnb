@@ -5,7 +5,11 @@
     <h1>My cats</h1>
     <% @cats.each do |cat| %>
       <div class="card-landscape">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if cat.picture_url != '' %>
+          <%= image_tag cat.picture_url%>
+        <% else %>
+          <%= cl_image_tag cat.photo.key %>
+        <% end %>
         <div class="card-landscape-infos">
           <h2> <%= link_to "#{cat.name}", cat_path(cat) %> </h2>
           <p>
