@@ -48,19 +48,24 @@
       <% else %>
 
         <!-- You have me already booked, but you can book me again. -->
-        <% if user_signed_in? && !current_user.bookings.where(cat: @cat).empty? %>
-          <p class="text-left"> You have me already booked:</p>
-          <ul>
+        <div id="already-booked">
+          <% if user_signed_in? && !current_user.bookings.where(cat: @cat).empty? %>
+            <h4 class="text-left pt-3 pl-3 pb-0"> You already booked me:</h4>
+            <ul class="text-left pl-0">
+
               <% current_user.bookings.where(cat: @cat).each do |booking| %>
-             <li>
-                from: <%= booking.date_from %> to: <%= booking.date_to %>
+              <li class="pl-0 mt-1 mb-0">
+                <strong>from:</strong> <%= booking.date_from %> <strong>to:</strong> <%= booking.date_to %>
               <% end %>
               </li>
-          </ul>
-          <h1>Take me home once again</h1>
+            </ul>
+        </div>
+        <h3 class="mt-4 mb-3">Take me home once again</h3>
+
 
         <!-- You dont have me booked yet, book me. -->
         <% else %>
+        <div id="not-booked">
           <h1>Take me home</h1>
         <%end %>
 
@@ -69,7 +74,9 @@
           <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
           <%= f.submit class: 'btn btn-info btn-md p-2' %>
         <% end %>
-      <% end %>
+
+        <% end %>
+        </div>
     </div>
 
   </div>
