@@ -15,12 +15,7 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @booking = Booking.new
-
     @all_my_cats = Cat.where(user_id: current_user.id)
-    # NOT WORKING YET
-    # if @all_my_cats
-    #   @my_other_cats = @my_cats.map { |cat| cat != @cat}
-    # end
   end
 
   def new
