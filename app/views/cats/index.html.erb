@@ -15,11 +15,11 @@
             <% end %>)">
           </div>
           <div class="cat-card-body">
-            <div class="detail">
-              <h2 class="card-title"><%= cat.name %></h2>
-              <p style="color:grey; font-size: 18px;"><i class="fas fa-map-marker-alt"></i> <%= cat.city %></p>
+            <div>
+              <h2 class="card-title mb-0"><%= cat.name %></h2>
+              <p class="mt-1" style="color:grey; font-size: 17px;"><i class="fas fa-map-marker-alt"></i> <%= cat.city %></p>
             </div>
-            <p class="card-text"><strong>Breed:</strong> <%= cat.breed %></p>
+            <p class="card-text truncate"><strong>Breed:</strong> <%= cat.breed %></p>
           </div>
           <div class="yellow-button">
             <%= link_to "Rent me", cat_path(cat) %>
