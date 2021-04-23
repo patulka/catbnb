@@ -33,9 +33,10 @@
 
     <div class="appl-form">
 
-      <% if current_user == @cat.user %>
+      <% if user_signed_in? && current_user == @cat.user  %>
         <!-- <p>I am your cat, you cannot book me. But see your other cats.</p> -->
         <h2 class="mb-4">My other cats:</h2>
+
               <% @all_my_cats.each do |cat| %>
                 <%if cat != @cat%>
                       <p class="text-left"> <b><%= link_to "#{cat.name}", cat_path(cat) %></b>: <%= cat.breed %> (<%= cat.color %>)
@@ -48,9 +49,10 @@
 
         <!-- You have me already booked, but you can book me again. -->
         <div id="already-booked">
-          <% if !current_user.bookings.where(cat: @cat).empty? %>
+          <% if user_signed_in? && !current_user.bookings.where(cat: @cat).empty? %>
             <h4 class="text-left pt-3 pl-3 pb-0"> You already booked me:</h4>
             <ul class="text-left pl-0">
+
               <% current_user.bookings.where(cat: @cat).each do |booking| %>
               <li class="pl-0 mt-1 mb-0">
                 <strong>from:</strong> <%= booking.date_from %> <strong>to:</strong> <%= booking.date_to %>

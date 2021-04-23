@@ -5,8 +5,7 @@ class Cat < ApplicationRecord
 
   validates :name, :breed, :description, :color, :city, presence: true
   validates :age, presence: true, inclusion: 0..30
-  validates :photo, presence: true, unless: ->(cat){cat.picture_url.present?}
-  validates :picture_url, presence: true, unless: ->(cat){cat.photo.present?}
+  validates :picture_url, presence: true
 
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?  

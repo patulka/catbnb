@@ -6,7 +6,11 @@
 
     <% @bookings.each do |booking| %>
       <div class="card-landscape">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if booking.cat.picture_url != '' %>
+          <%= image_tag booking.cat.picture_url%>
+        <% else %>
+          <%= cl_image_tag booking.cat.photo.key %>
+        <% end %>
         <div class="card-landscape-infos">
           <h2> <%= link_to "#{booking.cat.name}", cat_path(booking.cat) %> </h2>
           <p>

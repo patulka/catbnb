@@ -20,7 +20,7 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
     @booking = Booking.new
     # needed for else-if on display of booking form
-    @all_my_cats = Cat.where(user_id: current_user.id)
+    @all_my_cats = user_signed_in? ? Cat.where(user_id: current_user.id) : []
   end
 
   def new
