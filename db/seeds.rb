@@ -42,21 +42,5 @@ cities = ["Zurich", "Geneva", "Lucerne", "Winterthur", "Basel", "La Chaux-de-Fon
 end
 
 puts "Cats created."
-puts "Seeding bookings..."
 
-
-10.times do
-  date = Faker::Date.in_date_period
-
-  booking = Booking.new(
-    # Random date in current year
-    date_from: date,
-    date_to: date + 7
-    )
-    booking.cat = Cat.all.sample
-    booking.user = User.all.select{|user| user != booking.cat.user }.sample
-    booking.save!
-end
-
-puts "Bookings created."
 puts "Seeding finished."
