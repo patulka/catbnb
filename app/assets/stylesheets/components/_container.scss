@@ -20,7 +20,7 @@
   padding-bottom: 4rem;
 }
 
-.flex-container {
+.alex-flex-container {
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
@@ -28,11 +28,17 @@
 }
 .flex-container {
   display: flex;
+}
+
+.index-container {
   padding-bottom: 30px;
   padding-left: 15px;
 }
 
-.new-cat-form {
-  justify-content: space-between;
-  padding-left: 0px;
+.second_container {
+  background: white;
+  position: relative;
+  background-position: center;
+  margin: 50px auto;
+  padding-left: 35px;
 }

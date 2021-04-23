@@ -1,5 +1,7 @@
+<%= link_to 'Back to all cats', cats_path, class: "btn btn-outline-secondary back-button", id: "top-backlink"%>
+
   <div class="container">
-    <div class="flex-container">
+    <div class="alex-flex-container">
       <div class="new-card-for-cat">
         <div class="cat-img-big">
           <% if @cat.picture_url != '' %>
@@ -12,7 +14,7 @@
         <div class="new-card-cat-body">
           <div class="detail">
             <h2><b>About <%= @cat.name %></b></h2>
-            <p style="color:grey"><i class="fas fa-map-marker-alt"></i> <%= @cat.city %></p>
+            <p style="color:grey; font-size: 25px;"><i class="fas fa-map-marker-alt"></i> <%= @cat.city %></p>
           </div>
           <div class="details">
             <div>
@@ -41,8 +43,6 @@
                 <% end %>
               <% end %>
 
-              <%= link_to 'Back to all cats', cats_path, class: "btn btn-outline-secondary" %>
-
       <!-- <p> I am not your cat, you can book me.</p> -->
       <% else %>
 
@@ -68,12 +68,7 @@
           <%= f.input :date_to, :as => :date, html5: true, placeholder: "22/04/2021" %>
           <%= f.submit class: 'btn btn-info btn-md p-2' %>
         <% end %>
-        <p>or</p>
-        <%= link_to 'Back to all cats', cats_path, class: "btn btn-outline-secondary" %>
       <% end %>
-
-
-
     </div>
 
   </div>

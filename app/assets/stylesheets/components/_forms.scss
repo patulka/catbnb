@@ -5,8 +5,18 @@
   }
 }
 
+.appl-form {
+  height: 30%;
+  width: 35%;
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  text-align: center;
+}
+
 .form-half {
-  flex-grow: 0.4;
+  flex-grow: 0.45;
 }
 
 abbr {
@@ -21,4 +31,14 @@ abbr {
 
 #cat_description {
   height: 100%;
+}
+
+.search-form {
+  margin: auto 20%;
+}
+
+.new-cat-form {
+  justify-content: space-between;
+  background-color: white;
+  padding: 0 50px;
 }
