@@ -32,24 +32,8 @@
     <div class="appl-form">
 
       <% if current_user == @cat.user %>
-        <!-- <p>I am your cat, you cannot book me.</p> -->
-
-        <!-- TO BE DELETED WHEN MY OTHER CATS WORK -->
-<!--         <h2>My all cats:</h2>
-        <% @all_my_cats.each do |cat| %>
-          <div class="card-landscape">
-            <div class="card-landscape-infos">
-              <h2> <%= link_to "#{cat.name}", cat_path(cat) %> </h2>
-              <p>
-                <%= cat.breed %> (<%= cat.color %>)
-              </p>
-            </div>
-          </div>
-        <% end %> -->
-
+        <!-- <p>I am your cat, you cannot book me. See your other cats.</p> -->
         <h2 class="mb-4">My other cats:</h2>
-          <!-- <div class="card-landscape"> -->
-            <!-- <div class="card-landscape-infos"> -->
               <% @all_my_cats.each do |cat| %>
                 <%if cat != @cat%>
                       <p class="text-left"> <b><%= link_to "#{cat.name}", cat_path(cat) %></b>: <%= cat.breed %> (<%= cat.color %>)
@@ -57,25 +41,13 @@
                 <% end %>
               <% end %>
 
-              <%= link_to 'Back to all cats', booking_path, class: "btn btn-outline-secondary" %>
-            <!-- </div> -->
-          <!-- </div> -->
+              <%= link_to 'Back to all cats', cats_path, class: "btn btn-outline-secondary" %>
 
-<!--           <h2>My other cats:</h2>
-          <div class="card-landscape">
-            <div class="card-landscape-infos">
-              <% @all_my_cats.each do |cat| %>
-                <%if cat != @cat%>
-                      <p> <%= link_to "#{cat.name}", cat_path(cat) %> <%= cat.breed %> (<%= cat.color %>)
-                      </p>
-                <% end %>
-              <% end %>
-            </div>
-          </div> -->
-
+      <% elsif true%>
+        <p>I am not your cat, but you have me already booked.</p>
 
       <% else %>
-        <!-- <p>I am not your cat, you can book me.</p> -->
+        <p>I am not your cat, you can book me.</p>
 
         <h1>Take me home</h1>
         <%= simple_form_for [@cat, @booking] do |f| %>
