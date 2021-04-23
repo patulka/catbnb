@@ -1,15 +1,21 @@
-<h1>List of my bookings:</h1>
+<div class="container">
+  <div class="main-container">
+    <h1>My bookings</h1>
+
+    <% @bookings.each do |booking| %>
+      <div class="card-landscape">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-landscape-infos">
+          <h2> <%= link_to "#{booking.cat.name}", cat_path(booking.cat) %> </h2>
+          <p>
+            booked from <strong> <%= booking.date_from %> </strong> to <strong><%= booking.date_to %></strong>
+          </p>
+        </div>
+      </div>
+    <% end %>
 
 
-<ul>
-  <% @bookings.each do |booking| %>
-  <li>
-     <%= booking.cat.id %> | <b> <%= booking.cat.name %></b> | <%= booking.cat.city %> | <%= booking.date_from %> | <%= booking.date_to %> | <%= link_to "Details about #{booking.cat.name} ", cat_path(booking.cat) %>
-  </li>
-  <% end %>
-  <br>
-  <li>
-    <%= link_to "Go to all cats to create new booking", cats_path  %>
-  </li>
-</ul>
+  </div>
+    <%= link_to "View all cats", cats_path, class: "btn btn-info" %>
+</div>
 
