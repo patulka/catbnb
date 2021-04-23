@@ -1,4 +1,4 @@
-<div class="container">
+<div class="second_container">
   <div class="row">
     <div class="col-md-6">
       <% if @booking.cat.picture_url != '' %>
@@ -7,9 +7,9 @@
         <%= cl_image_tag @booking.cat.photo.key, :style => "width:90%; border-radius:5px; margin:10px auto;" %>
       <% end %>
     </div>
-    <div class="col-md-6 text-center">
+    <div class="col-md-6 card-cat-booking">
       <h1><b>Booking confirmed</b></h1>
-      <h2><b>Name:</b> <%= @booking.cat.name %></h2>
+      <p><b>Name:</b> <%= @booking.cat.name %></p>
       <p><b>Location:</b> <%= @booking.cat.city %></p>
       <p><b>Start date:</b>
         <%= @booking.date_from.strftime('%d/%m/%Y') %></p>
