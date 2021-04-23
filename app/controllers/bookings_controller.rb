@@ -10,10 +10,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.cat = @cat
     @booking.user = @user
-    if @booking.save!
+    if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      render 'cats/show'
     end
   end
 
